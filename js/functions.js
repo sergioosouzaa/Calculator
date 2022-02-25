@@ -38,3 +38,99 @@ function operate(a, b, operator)
     }
     return result;
 }
+
+
+//put the numbers on the screen
+
+let displayValue = document.querySelector('.display');
+
+const nums = document.querySelectorAll('.num').forEach(numButton => {
+    numButton.addEventListener('click', event => {
+        if(checkScreenValue === 1)
+        {
+            displayValue.textContent = "";
+            displayValue.value = 0;
+            checkScreenValue = 0;
+        }
+        displayValue.textContent += numButton.value;
+        displayValue.value = 1;
+        });
+});
+// put the signals
+const operations = document.querySelectorAll('.op').forEach(op => {
+    op.addEventListener('click', event => {
+        if(checkScreenValue === 1)
+        {
+            displayValue.textContent = "";
+            displayValue.value = 0;
+            checkScreenValue = 0;
+        }
+        if(displayValue.value === 1)
+        {
+            displayValue.textContent += op.value;
+            displayValue.value = 0;
+        }
+        });
+});
+
+
+// clear the scrren
+
+const clearScreen = document.querySelector('.clear').addEventListener('click', event => {
+    displayValue.textContent = "";
+    displayValue.value = 0;
+});
+
+
+
+//check if its the result on the screen
+
+let checkScreenValue = 0;
+
+//calculate the output
+
+
+const calculateResults = document.querySelector('.result').addEventListener('click', event => {
+    let expression = Array.from(displayValue.textContent);
+    let resultFinal = 0;
+    //initialize positions and create an array for nums and for op
+    let numPos = 0;
+    let opPos = 0;
+    let nums = [0];
+    let op = [0];
+
+    let results = expression.forEach(char => {
+        if(char === "+" || char === "-" || char === "*" ||char === "/")
+        {
+            //update the op array
+            op[opPos] = char;
+            opPos++;
+            ///update the num array pos
+            numPos++;
+            nums[numPos] = 0;
+        } else {
+            //adds the last num and convert it to number (from char)
+            nums[numPos] = nums[numPos] + char;
+            nums[numPos] = Number(nums[numPos]);
+        }
+
+    });
+
+    //when the expression ends with a operation, consider the last num as zero
+    if(expression[expression.length - 1] === "*" || expression[expression.length - 1] === "/" )
+    {
+        nums[numPos] = 1;
+    } 
+    console.log(expression[expression.length] );
+    console.log(nums);
+
+    for (let i = 0; i < op.length; i++)
+    {
+        resultFinal = operate(nums[i], nums[i + 1], op[i]);
+        //update the num as the result of the previus operations
+        nums[i + 1] = resultFinal;
+    }
+
+    displayValue.textContent = resultFinal;
+    checkScreenValue = 1;
+});
