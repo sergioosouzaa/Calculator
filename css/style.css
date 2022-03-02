@@ -1,7 +1,7 @@
 body{
     display: flex;
     justify-content: center;
-    
+    background-color: rgb(192, 192, 115);
 }
 
 
@@ -11,13 +11,13 @@ body{
     flex-direction: column;
     border-radius: 15px;
     padding: 15px;
-    gap: 5px;
     width: 200px;
 }
 
 .display{
     background-color: white;
     padding: 10px;
+    margin-bottom: 15px;
     font-size: 25px;
     font-weight:400;
     height: 35px;
@@ -26,13 +26,23 @@ body{
     text-overflow: ellipsis;
 }
 
+.calcBody{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-grow: 1;
+    justify-content:space-between;
+}
+
 button{
     font-size: 20px;
     background-color: white;
-    border-radius: 20%;
     padding: 15px;
-    border: 2px solid #000000;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
 }
 
 
@@ -43,3 +53,4 @@ button:active {
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
+
