@@ -1,7 +1,7 @@
-body{
+/* body{
     display: flex;
     justify-content: center;
-    background-color: rgb(192, 192, 115);
+    
 }
 
 
@@ -9,40 +9,111 @@ body{
     display: flex;
     background-color: rgb(172, 163, 163);
     flex-direction: column;
+    align-content: space-around;
     border-radius: 15px;
     padding: 15px;
-    width: 200px;
+    gap: 5px;
+    width: 400px;
+    height: 500px;
 }
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+    display: flex;
+    gap:10px;
+}
+
+.num,
+.op{
+    flex: 1 0 auto;
+}
+
 
 .display{
     background-color: white;
     padding: 10px;
-    margin-bottom: 15px;
-    font-size: 25px;
+    font-size: 50px;
     font-weight:400;
-    height: 35px;
-    flex-wrap: nowrap;
+    height: 60px;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.calcBody{
+button{
+    font-size: 40px;
     background-color: white;
-    display: flex;
-    flex-direction: column;
+    border-radius: 20%;
+    padding: 15px;
+    width: px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.row {
+
+button:hover {background-color: #b3b4b3}
+
+button:active {
+  background-color: #a3a8a6;
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+} */
+
+body{
+    background-color: #a3a8a6;
     display: flex;
-    flex-grow: 1;
-    justify-content:space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: aquamarine;
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    border: medium solid;
+    border-radius: 5px;
+}
+
+.row1,
+.row2,
+.row3,
+.row4,
+.row5 {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.display{
+    background-color: white;
+    font-size: 30px;
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    text-overflow: ellipsis;
+    border-style: solid;
+    border-color: rgb(153, 143, 143);
+    border: medium solid;
+    border-radius: 5px;
+
 }
 
 button{
-    font-size: 20px;
+    flex: 1;
+    margin: 2px;
+    font-size: 30px;
     background-color: white;
-    padding: 15px;
-    border: none;
+    border-radius: 20%;
+    padding: 10px;
+    border: 2px solid #000000;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 
@@ -54,3 +125,6 @@ button:active {
   transform: translateY(4px);
 }
 
+.credits{
+    margin-top: 45px;
+}

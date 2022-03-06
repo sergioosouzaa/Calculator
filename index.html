@@ -4,43 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div class="calculator">
         <div class="display" value="0"></div>
         <div class="calcBody">
-            <div class="1-row" class="row">
-                <button class="num" value="7">7</button>
-                <button class="num" value="8">8</button>
-                <button class="num" value="9">9</button>
-                <button class="op" value="/">/</button>
+            <div class="row1">
+                <button class="num" class="grow1" data-key="7"  value="7">7</button>
+                <button class="num" class="grow1" data-key="8"  value="8">8</button>
+                <button class="num"  data-key="9" value="9">9</button>
+                <button class="op"  data-key="/"  value="/">/</button>
             </div>
-            <div class="2-row" class="row">
-                <button class="num" value="4">4</button>
-                <button class="num" value="5">5</button>
-                <button class="num" value="6">6</button>
-                <button class="op" value="*">x</button>
+            <div class="row2">
+                <button class="num" class="grow1" data-key="4" value="4">4</button>
+                <button class="num" class="grow1" data-key="5" value="5">5</button>
+                <button class="num" class="grow1" data-key="6"  value="6">6</button>
+                <button class="op" class="grow1" data-key="*" dvalue="*">x</button>
             </div>
-            <div class="3-row" class="row">
-                <button class="num" value="1">1</button>
-                <button class="num" value="2">2</button>
-                <button class="num" value="3">3</button>
-                <button class="op" value="-">-</button>
+            <div class="row3">
+                <button class="num" class="grow1" data-key="1" value="1">1</button>
+                <button class="num" class="grow1" data-key="2" value="2">2</button>
+                <button class="num" class="grow1" data-key="3" value="3">3</button>
+                <button class="op" class="grow1" data-key="-" value="-">-</button>
             </div>     
-            <div class="4-row" class="row">
-                <button class="num" value="0">0</button>
-                <button class="op" value="+">+</button>
-                <button class="delete">Del</button>
+            <div class="row4">
+                <button class="num" class="grow1" data-key="0"  value="0">0</button>
+                <button class="op" class="grow1" data-key="+"  value="+">+</button>
+                <button class="delete" class="grow2" data-key="Backspace" >Del</button>
+
             </div>
-            <div class="5-row" class="row">
-                <button class = "clear" >Clear</button>
-                <button class="dot" value=".">.</button>
-                <button class="result">=</button>
+            <div class="row5">
+                <button class = "clear" class="grow2" >Clear</button>
+                <button class="dot"  class="grow1" data-key="." value=".">.</button>
+                <button class="result" class="grow1" data-key="=" >=</button>
             </div>   
         </div>
 
+    </div>
+
+    <div class="credits">
+        Developed by @sergioosouzaa. 2022.
     </div>
 
     <script src="../Calculator/js/functions.js"></script> 
