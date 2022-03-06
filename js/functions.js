@@ -224,12 +224,16 @@ const calculateResults = document.querySelector('.result').addEventListener('cli
         nums[numPos] = 1;
     } 
 
-
-    for (let i = 0; i < op.length; i++)
+    if(op[0] === 0)
     {
-        resultFinal = operate(nums[i], nums[i + 1], op[i]);
-        //update the num as the result of the previus operations
-        nums[i + 1] = resultFinal;
+        resultFinal = nums[0];
+    } else {
+        for (let i = 0; i < op.length; i++)
+        {
+            resultFinal = operate(nums[i], nums[i + 1], op[i]);
+            //update the num as the result of the previus operations
+            nums[i + 1] = resultFinal;
+        }
     }
 
     displayValue.textContent = resultFinal;
@@ -288,11 +292,16 @@ document.addEventListener('keydown', function(e) {
         } 
     
     
-        for (let i = 0; i < op.length; i++)
+        if(op[0] === 0)
         {
-            resultFinal = operate(nums[i], nums[i + 1], op[i]);
-            //update the num as the result of the previus operations
-            nums[i + 1] = resultFinal;
+            resultFinal = nums[0];
+        } else {
+            for (let i = 0; i < op.length; i++)
+            {
+                resultFinal = operate(nums[i], nums[i + 1], op[i]);
+                //update the num as the result of the previus operations
+                nums[i + 1] = resultFinal;
+            }
         }
     
         displayValue.textContent = resultFinal;
