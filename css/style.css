@@ -35,12 +35,12 @@ body{
     padding: 10px;
     width: 200px;
     height: 40px;
+    flex-wrap: nowrap;
     text-overflow: ellipsis;
     border-style: solid;
     border-color: rgb(153, 143, 143);
     border: medium solid;
     border-radius: 5px;
-
 }
 
 button{
